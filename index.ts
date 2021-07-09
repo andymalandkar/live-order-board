@@ -1,5 +1,6 @@
-import { CancelOrder } from './src/services/cancelOrder';
-import { GetOrders } from './src/services/getOrders';
-import { PlaceOrder } from './src/services/placeOrder';
+import cancelOrder from './src/services/cancelOrder';
+import getOrders from './src/services/getOrders';
+import placeOrder from './src/services/placeOrder';
+import getOrdersSummary from './src/services/getOrdersSummary';
 
-export { GetOrders, PlaceOrder, CancelOrder };
+export { getOrders, placeOrder, cancelOrder, getOrdersSummary };
