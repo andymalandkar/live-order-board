@@ -10,7 +10,7 @@ interface OrdersSummary {
 const getOrdersSummary = (fetchCount = 10): OrdersSummary => {
   return {
     sellOrders: createOrderSummary(sellOrders, fetchCount),
-    buyOrders: createOrderSummary(buyOrders.reverse(), fetchCount),
+    buyOrders: createOrderSummary([...buyOrders].reverse(), fetchCount),
   };
 };
 

@@ -1,4 +1,4 @@
-enum CoinType {
+export enum CoinType {
   Bitcoin = 'Bitcoin',
   Ethereum = 'Ethereum',
   Litecoin = 'Litecoin',
