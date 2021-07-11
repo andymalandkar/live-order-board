@@ -4,7 +4,7 @@ import { Order, OrderType } from '../../types';
 import _ from 'lodash';
 
 const placeOrder = (order: Order): string => {
-  const iterator = (o: Order) => o.pricePerCoin;
+  const iterator = (o: Order) => Number(o.pricePerCoin.replace('£', ''));
   const uuid = v4();
   order.orderId = uuid;
   orders[uuid] = order;

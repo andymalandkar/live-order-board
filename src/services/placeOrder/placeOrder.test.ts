@@ -61,7 +61,7 @@ describe('Place Order', () => {
       orders[1].orderId = placeOrder(orders[1]);
       orders[2].orderId = placeOrder(orders[2]);
 
-      expect(buyOrders).toMatchObject([orders[2], orders[1], orders[0]]);
+      expect(buyOrders).toEqual([orders[2], orders[1], orders[0]]);
 
       expect(sellOrders).toEqual([]);
     });
@@ -120,7 +120,7 @@ describe('Place Order', () => {
       orders[1].orderId = placeOrder(orders[1]);
       orders[2].orderId = placeOrder(orders[2]);
 
-      expect(sellOrders).toMatchObject([orders[2], orders[1], orders[0]]);
+      expect(sellOrders).toEqual([orders[2], orders[1], orders[0]]);
 
       expect(buyOrders).toEqual([]);
     });
@@ -162,10 +162,10 @@ describe('Place Order', () => {
       orders[0].orderId = placeOrder(orders[0]);
       orders[1].orderId = placeOrder(orders[1]);
       orders[2].orderId = placeOrder(orders[2]);
-      orders[2].orderId = placeOrder(orders[3]);
+      orders[3].orderId = placeOrder(orders[3]);
 
-      expect(buyOrders).toMatchObject([orders[2], orders[0]]);
-      expect(sellOrders).toMatchObject([orders[3], orders[1]]);
+      expect(buyOrders).toEqual([orders[2], orders[0]]);
+      expect(sellOrders).toEqual([orders[3], orders[1]]);
     });
   });
 });
