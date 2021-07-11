@@ -1,6 +1,6 @@
 {
   "name": "live-order-board-crypto-inc",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "The Cyrto Inc. 'Live Order Board' supports Placing BUY/ SELL order, CANCEL order & View the top 10 orders.",
   "main": "lib/index.js",
   "scripts": {
