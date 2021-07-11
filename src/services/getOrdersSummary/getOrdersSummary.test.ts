@@ -229,8 +229,8 @@ describe('Orders Summary', () => {
 
     expect(getOrdersSummary()).toEqual({
       buyOrders: [
-        `${orders[0].orderQuantity} of ${orders[0].coinType} for ${orders[0].pricePerCoin}`,
         `${orders[2].orderQuantity} of ${orders[2].coinType} for ${orders[2].pricePerCoin}`,
+        `${orders[0].orderQuantity} of ${orders[0].coinType} for ${orders[0].pricePerCoin}`,
       ],
       sellOrders: [
         `${orders[3].orderQuantity} of ${orders[3].coinType} for ${orders[3].pricePerCoin}`,

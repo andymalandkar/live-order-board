@@ -32,27 +32,27 @@ describe('Place Order', () => {
       expect(sellOrders).toEqual([]);
     });
 
-    test('Should be present in sorted order', () => {
+    test('Should be present in sorted order by pricePerCoin DESC', () => {
       const orders: Order[] = [
         {
           userId: 'user 1',
           coinType: CoinType.Bitcoin,
           orderQuantity: 100,
-          pricePerCoin: '£40',
+          pricePerCoin: '£20',
           orderType: OrderType.Buy,
         },
         {
           userId: 'user 2',
           coinType: CoinType.Ethereum,
           orderQuantity: 100,
-          pricePerCoin: '£30',
+          pricePerCoin: '£40',
           orderType: OrderType.Buy,
         },
         {
           userId: 'user 3',
           coinType: CoinType.Bitcoin,
           orderQuantity: 100,
-          pricePerCoin: '£20',
+          pricePerCoin: '£30',
           orderType: OrderType.Buy,
         },
       ];
@@ -61,7 +61,7 @@ describe('Place Order', () => {
       orders[1].orderId = placeOrder(orders[1]);
       orders[2].orderId = placeOrder(orders[2]);
 
-      expect(buyOrders).toEqual([orders[2], orders[1], orders[0]]);
+      expect(buyOrders).toEqual([orders[1], orders[2], orders[0]]);
 
       expect(sellOrders).toEqual([]);
     });
@@ -91,7 +91,7 @@ describe('Place Order', () => {
       expect(buyOrders).toEqual([]);
     });
 
-    test('Should be present in sorted order', () => {
+    test('Should be present in sorted order by pricePerCoin ASC', () => {
       const orders: Order[] = [
         {
           userId: 'user 1',
@@ -127,7 +127,7 @@ describe('Place Order', () => {
   });
 
   describe('Buy & Sell Orders', () => {
-    test('Should match both buy & sell orders and should be in sorted order', () => {
+    test('Should match both buy & sell orders and should be in sorted order DESC & ASC respectively', () => {
       const orders: Order[] = [
         {
           userId: 'user 1',
@@ -164,7 +164,7 @@ describe('Place Order', () => {
       orders[2].orderId = placeOrder(orders[2]);
       orders[3].orderId = placeOrder(orders[3]);
 
-      expect(buyOrders).toEqual([orders[2], orders[0]]);
+      expect(buyOrders).toEqual([orders[0], orders[2]]);
       expect(sellOrders).toEqual([orders[3], orders[1]]);
     });
   });

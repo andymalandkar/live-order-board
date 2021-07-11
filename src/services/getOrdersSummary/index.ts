@@ -7,14 +7,24 @@ interface OrdersSummary {
   sellOrders: string[];
 }
 
+/**
+ *
+ * @param fetchCount
+ * @returns ordersSummary
+ * 1. Buy orders summary in DESC order of pricePerCoin
+ * 2. Sell orders summary in ASC order of pricePerCoin.
+ */
 const getOrdersSummary = (fetchCount = 10): OrdersSummary => {
   return {
     sellOrders: createOrderSummary(sellOrders, fetchCount),
-    buyOrders: createOrderSummary([...buyOrders].reverse(), fetchCount),
+    buyOrders: createOrderSummary(buyOrders, fetchCount),
   };
 };
 
-const createOrderSummary = (currentOrders: Order[], fetchCount: number) => {
+const createOrderSummary = (
+  currentOrders: Order[],
+  fetchCount: number,
+): string[] => {
   const ordersSummary: string[] = [];
 
   const groupedOrdersByPrice = _.groupBy(currentOrders, (o) => o.pricePerCoin);
