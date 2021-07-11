@@ -2,6 +2,8 @@
 
 Live order board is Javascript/ typescript utility library that provides helper functions to place, cancel crypto orders. Also, you can get your all orders summary.
 
+Live order board [example](https://github.com/andymalandkar/live-order-board-example).
+
 ## Install
 
 `npm i live-order-board-crypto-inc`
